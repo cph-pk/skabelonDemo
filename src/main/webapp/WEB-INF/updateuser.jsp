@@ -51,7 +51,7 @@
         <caption>Ret kunde</caption>
         <tr>
             <td>Email:</td>
-            <td><input type="text" name="email" placeholder="someone@nowhere.com" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}" required></td>
+            <td><input type="text" name="email" value="${requestScope["email"]}" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}" required></td>
         </tr>
         <tr>
             <td>Role:</td>

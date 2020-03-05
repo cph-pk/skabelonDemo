@@ -64,6 +64,7 @@
     <form action="FrontController" method="post">
         <input type="hidden" name="taget" value="updateuser">
         <input type="hidden" name="id" value="${element.id}">
+        <input type="hidden" name="email" value="${element.email}">
         <button type="submit" name="update">Ret</button>
     </form>
     </td>
@@ -71,7 +72,7 @@
         <form action="FrontController" method="post">
             <input type="hidden" name="taget" value="deleteuser">
             <input type="hidden" name="id" value="${element.id}">
-            <button type="submit" name="delete">Slet</button>
+            <button type="submit" name="delete" onclick="return confirm('Er du sikker på at du vil slette?')">Slet</button>
         </form>
     </td>
 </tr>

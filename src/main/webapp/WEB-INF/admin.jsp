@@ -33,14 +33,14 @@
 <h1>Admin side</h1>
 
 
-<form action="" method="post">
+<form action="FrontController" method="post">
     <input type="hidden" name="taget" value="employeepage">
     <button type="submit" name="hent">employeepage</button>
 </form>
 <h2>Antal kunder: ${fn:length(requestScope.admin)}</h2>
 <h3>Liste med alle kunder</h3>
-<form action="" method="post">
-    <input type="hidden" name="taget" value="createuser">
+<form action="FrontController" method="post">
+    <input type="hidden" name="taget" value="createnewuser">
     <button type="submit" name="hent">Ny kunde</button>
 </form>
 <table>

@@ -81,4 +81,17 @@ public class UserMapper {
         return allUsers;
     }
 
+    public static void createNewUser(User user) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "INSERT INTO Users (email, password, role) VALUES (?, ?, ?)";
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+            ps.setString( 1, user.getEmail() );
+            ps.setString( 2, user.getPassword() );
+            ps.setString( 3, user.getRole() );
+            ps.executeUpdate();
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
 }

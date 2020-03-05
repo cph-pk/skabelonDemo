@@ -43,7 +43,7 @@
     </span>
 <br>
     <form name="register" action="FrontController" method="POST">
-        <input type="hidden" name="taget" value="register">
+        <input type="hidden" name="taget" value="createuser">
         <table>
             <caption>Opret kunde</caption>
             <tr>

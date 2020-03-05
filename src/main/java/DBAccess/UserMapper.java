@@ -94,4 +94,27 @@ public class UserMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
+
+    public static void deleteUser(User user) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "DELETE * FROM Users WHERE id = ?";
+            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1,user.getId());
+            ps.executeUpdate();
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+
+    }
+    /*
+    public static void updateUser(User user) {
+        try {
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
+    */
+
 }

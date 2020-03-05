@@ -60,14 +60,14 @@
     <td>${element.email}</td>
     <td>${element.role}</td>
     <td>
-    <form action="" method="post">
+    <form action="FrontController" method="post">
         <input type="hidden" name="taget" value="updateuser">
         <input type="hidden" name="" value="${element.id}">
         <button type="submit" name="update">Ret</button>
     </form>
     </td>
     <td>
-        <form action="" method="post">
+        <form action="FrontController" method="post">
             <input type="hidden" name="taget" value="deleteuser">
             <input type="hidden" name="" value="${element.id}">
             <button type="submit" name="delete">Slet</button>

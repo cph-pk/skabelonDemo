@@ -22,10 +22,10 @@
                     <form name="login" action="FrontController" method="POST">
                         <input type="hidden" name="taget" value="login">
                         Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
+                        <input type="text" name="email" placeholder="someone@nowhere.com" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}" required>
                         <br>
                         Password:<br>
-                        <input type="password" name="password" value="sesam">
+                        <input type="password" name="password" placeholder="password">
                         <br>
                         <input type="submit" value="Submit">
                     </form>
@@ -35,13 +35,13 @@
                     <form name="register" action="FrontController" method="POST">
                         <input type="hidden" name="taget" value="register">
                         Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
+                        <input type="text" name="email" placeholder="someone@nowhere.com" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}" required>
                         <br>
                         Password:<br>
-                        <input type="password" name="password1" value="sesam">
+                        <input type="password" name="password1" placeholder="password">
                         <br>
                         Retype Password:<br>
-                        <input type="password" name="password2" value="sesam">
+                        <input type="password" name="password2" placeholder="retype password">
                         <br>
                         <input type="submit" value="Submit">
                     </form>

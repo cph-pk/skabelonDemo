@@ -12,7 +12,11 @@
         <title>Customer home page</title>
     </head>
     <body>
-
+        <span style="float: right">
+        <form action="" method="post">
+            <button type="submit" name="logout">logout</button>
+        </form>
+        </span>
 
         <h1>Hello ${sessionScope.email} </h1>
 
@@ -20,6 +24,6 @@
 
 
 
-        You are now logged in as a customer of our wonderful site.
+        <h2>You are now logged in as a customer of our wonderful site.</h2>
     </body>
 </html>

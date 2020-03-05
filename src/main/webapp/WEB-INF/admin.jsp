@@ -69,7 +69,7 @@
     <td>
         <form action="FrontController" method="post">
             <input type="hidden" name="taget" value="deleteuser">
-            <input type="hidden" name="" value="${element.id}">
+            <input type="hidden" name="id" value="${element.id}">
             <button type="submit" name="delete">Slet</button>
         </form>
     </td>

@@ -95,12 +95,12 @@ public class UserMapper {
         }
     }
 
-    public static void deleteUser(User user) throws LoginSampleException {
+    public static void deleteUser(int id) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "DELETE * FROM Users WHERE id = ?";
+            String SQL = "DELETE FROM Users WHERE id = ?";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1,user.getId());
+            ps.setInt(1,id);
             ps.executeUpdate();
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );

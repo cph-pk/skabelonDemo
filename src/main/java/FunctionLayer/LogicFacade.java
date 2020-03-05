@@ -30,6 +30,10 @@ public class LogicFacade {
     public static List<User> showAllCustomers() throws SQLException {
         return UserMapper.showAllCustomers();
     }
+
+    public static void deleteUser(int id) throws LoginSampleException {
+        UserMapper.deleteUser(id);
+    }
     /*
     public static User UpdateUser (String email,String role ) throws LoginSampleException {
         User user = new User(email,password, role);

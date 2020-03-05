@@ -13,7 +13,8 @@
     </head>
     <body>
         <span style="float: right">
-        <form action="" method="post">
+        <form action="FrontController" method="post">
+            <input type="hidden" name="taget" value="logout">
             <button type="submit" name="logout">logout</button>
         </form>
         </span>

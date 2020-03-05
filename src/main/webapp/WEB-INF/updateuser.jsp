@@ -24,19 +24,20 @@
 </head>
 <body>
 <span style="float: right">
-    <form action="" method="post">
+    <form action="FrontController" method="post">
+        <input type="hidden" name="taget" value="logout">
         <button type="submit" name="logout">logout</button>
     </form>
     </span>
 <h1>Opret ny kunde</h1>
 <span style="float: left">
-    <form action="" method="post">
+    <form action="FrontController" method="post">
         <input type="hidden" name="taget" value="employeepage">
         <button type="submit" name="hent">employeepage</button>
     </form>
     </span>
 <span>
-    <form action="" method="post">
+    <form action="FrontController" method="post">
         <input type="hidden" name="taget" value="admin">
         <button type="submit" name="hent">Admin</button>
     </form>

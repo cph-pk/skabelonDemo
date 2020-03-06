@@ -38,12 +38,9 @@ public class LogicFacade {
     public static void updateUser(int id, String email, String role) throws LoginSampleException {
         UserMapper.updateUser(id,email,role);
     }
-    /*
-    public static User UpdateUser (String email,String role ) throws LoginSampleException {
-        User user = new User(email,password, role);
-        UserMapper.updateNewUser( user );
-        return user;
+
+    public static void resetCode(int id, String newCode) throws LoginSampleException {
+        UserMapper.resetCode(id,newCode);
     }
 
-     */
 }

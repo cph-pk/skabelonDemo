@@ -134,4 +134,17 @@ public class UserMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
+
+    public static void resetCode(int id, String newCode) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE Users SET password = ? WHERE id = ?";
+            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, newCode);
+            ps.setInt(2, id);
+            ps.executeUpdate();
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
 }

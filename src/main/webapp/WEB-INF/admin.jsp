@@ -51,7 +51,7 @@
     <th>Id.</th>
     <th>Email.</th>
     <th>Role.</th>
-    <th colspan="2"></th>
+    <th colspan="3"></th>
     </tr>
     </thead>
     <tbody>
@@ -73,6 +73,13 @@
             <input type="hidden" name="taget" value="deleteuser">
             <input type="hidden" name="id" value="${element.id}">
             <button type="submit" name="delete" onclick="return confirm('Er du sikker på at du vil slette?')">Slet</button>
+        </form>
+    </td>
+    <td>
+        <form action="FrontController" method="post">
+            <input type="hidden" name="taget" value="resetcode">
+            <input type="hidden" name="id" value="${element.id}">
+            <button type="submit" name="delete" onclick="return confirm('Er du sikker på at du vil nulstille kode?')">Nulstil kode</button>
         </form>
     </td>
 </tr>

@@ -19,13 +19,21 @@ public class createUser extends Command {
         String password2 = request.getParameter( "password2" );
         String role = request.getParameter("role");
         if ( password1.equals( password2 ) ) {
-            LogicFacade.createNewUser( email, password1,role );
-            List<User> allUsers = LogicFacade.showAllCustomers();
-            session.setAttribute("allusers",allUsers);
-            request.setAttribute("admin", allUsers);
-            return "admin";
+            if ( !password1.isEmpty()) {
+                LogicFacade.createNewUser(email, password1, role);
+                List<User> allUsers = LogicFacade.showAllCustomers();
+                session.setAttribute("allusers", allUsers);
+                request.setAttribute("admin", allUsers);
+                return "admin";
+            } else {
+                request.setAttribute("email" ,email);
+                request.setAttribute("besked", "password is empty!" );
+                return "createnewuser";
+            }
         } else {
-            throw new LoginSampleException( "the two passwords did not match" );
+            request.setAttribute("email" ,email);
+            request.setAttribute("besked", "the two passwords did not match" );
+            return "createnewuser";
         }
     }
 }

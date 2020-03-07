@@ -70,6 +70,7 @@
                 <td colspan="2"><input type="submit" value="Submit"></td>
             </tr>
         </table>
+        ${requestScope.besked}
     </form>
 </body>
 </html>

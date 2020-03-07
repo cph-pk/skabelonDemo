@@ -107,19 +107,6 @@ public class UserMapper {
         }
 
     }
-/*
-    public static void updateUser(User user) throws LoginSampleException {
-        try {
-            Connection con = Connector.connection();
-            String SQL = "UPDATE Users SET email = '" + user.getEmail() + "', role = '" + user.getRole() + "' " +
-                    "WHERE id = '" + user.getId() + "'";
-            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
-            ps.executeUpdate();
-        } catch ( SQLException | ClassNotFoundException ex ) {
-            throw new LoginSampleException( ex.getMessage() );
-        }
-    }
-*/
 
     public static void updateUser(int id, String email, String role) throws LoginSampleException {
         try {

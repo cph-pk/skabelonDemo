@@ -58,11 +58,11 @@ public class UserMapper {
         }
     }
 
-    public static List<User> showAllCustomers() throws SQLException {
+    public static List<User> showAllCustomers(String userRole) throws SQLException {
         List<User> allUsers = new ArrayList<>();
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM users WHERE role = 'customer'";
+            String SQL = "SELECT * FROM users WHERE role = '"+ userRole + "'";
             PreparedStatement ps = con.prepareStatement( SQL );
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -134,4 +134,5 @@ public class UserMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
+
 }

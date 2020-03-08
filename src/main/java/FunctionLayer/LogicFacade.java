@@ -27,8 +27,8 @@ public class LogicFacade {
         return user;
     }
 
-    public static List<User> showAllCustomers() throws SQLException {
-        return UserMapper.showAllCustomers();
+    public static List<User> showAllCustomers(String userRole) throws SQLException {
+        return UserMapper.showAllCustomers(userRole);
     }
 
     public static void deleteUser(int id) throws LoginSampleException {

@@ -10,6 +10,8 @@ import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.List;
 
+import static PresentationLayer.UpdateSql.getString;
+
 public class createUser extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException, SQLException {
@@ -21,10 +23,7 @@ public class createUser extends Command {
         if ( password1.equals( password2 ) ) {
             if ( !password1.isEmpty()) {
                 LogicFacade.createNewUser(email, password1, role);
-                List<User> allUsers = LogicFacade.showAllCustomers();
-                session.setAttribute("allusers", allUsers);
-                request.setAttribute("admin", allUsers);
-                return "admin";
+                return getString(request, session);
             } else {
                 request.setAttribute("email" ,email);
                 request.setAttribute("besked", "password is empty!" );

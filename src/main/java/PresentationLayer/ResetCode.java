@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Random;
 
+import static PresentationLayer.UpdateSql.getString;
+
 public class ResetCode extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException, SQLException {
@@ -18,14 +20,11 @@ public class ResetCode extends Command {
         String id = request.getParameter( "id" );
         String newCode = randomCode(8);
         LogicFacade.resetCode( Integer.parseInt(id) , newCode);
-        List<User> allUsers = LogicFacade.showAllCustomers();
-        session.setAttribute("allusers",allUsers);
-        request.setAttribute("admin", allUsers);
-        return "admin";
+        return getString(request, session);
     }
 
     private static String randomCode(int length) {
-        char[] chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRST".toCharArray();
+        char[] chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 
         StringBuilder sb = new StringBuilder();
         Random random = new Random();

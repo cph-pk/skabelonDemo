@@ -25,6 +25,7 @@
 
     <form action="FrontController" method="post">
         <input type="hidden" name="taget" value="admin">
+        <input type="hidden" name="userList" value="customer">
         <button type="submit" name="hent">Admin</button>
     </form>
     </body>

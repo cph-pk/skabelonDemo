@@ -38,14 +38,23 @@
     <input type="hidden" name="taget" value="employeepage">
     <button type="submit" name="hent">employeepage</button>
 </form>
-<h2>Antal kunder: ${fn:length(requestScope.admin)}</h2>
-<h3>Liste med alle kunder</h3>
+<h2>Antal ${requestScope.listName}: ${fn:length(requestScope.admin)}</h2>
+<h3>Liste med alle ${requestScope.listName}</h3>
+<span style="float: left">
 <form action="FrontController" method="post">
     <input type="hidden" name="taget" value="createnewuser">
     <button type="submit" name="hent">Ny kunde</button>
 </form>
+</span>
+<span>
+<form action="FrontController" method="post">
+    <input type="hidden" name="taget" value="admin">
+    <input type="hidden" name="userList" value="${requestScope.userList}">
+    <button type="submit" name="bName">Vis ${requestScope.buttonName}</button>
+</form>
+</span>
 <table>
-    <caption>Kunde-liste</caption>
+    <caption>${requestScope.listName}-liste</caption>
     <thead>
     <tr>
     <th>Id.</th>

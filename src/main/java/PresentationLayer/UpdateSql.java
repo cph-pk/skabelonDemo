@@ -18,9 +18,16 @@ public class UpdateSql extends Command {
         String email = request.getParameter( "email" );
         String role = request.getParameter( "role" );
         LogicFacade.updateUser( id,email,role );
-        List<User> allUsers = LogicFacade.showAllCustomers();
+        return getString(request, session);
+    }
+
+    static String getString(HttpServletRequest request, HttpSession session) throws SQLException {
+        List<User> allUsers = LogicFacade.showAllCustomers("customer");
         session.setAttribute("allusers",allUsers);
         request.setAttribute("admin", allUsers);
+        request.setAttribute("userList","employee");
+        request.setAttribute("buttonName","employee");
+        request.setAttribute("listName","Customer");
         return "admin";
     }
 }
